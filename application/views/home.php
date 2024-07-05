@@ -1,4 +1,3 @@
-<p>Home</p>
-
-<script>    
-</script>
+<?php
+    echo phpinfo();
+?>
