@@ -22,5 +22,4 @@
 	<script type="text/javascript" src="/assets/js/util.js<?=$this->config->item('ver')?>"></script>	
 </head>
 
-<body>
-		
+<body>	
