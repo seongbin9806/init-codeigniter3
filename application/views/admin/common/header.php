@@ -5,6 +5,7 @@
 	<title>관리자 - <?=$this->config->item('title')?></title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <link rel="icon" href="<?=$this->config->item('baseUrl')?>/favicon.ico">
     
     <meta property="og:title" content="관리자 - <?=$this->config->item('title')?>">
     <meta property="og:description" content="관리자 PC전용 웹사이트">

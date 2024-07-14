@@ -9,9 +9,7 @@ class Admin extends CI_Controller {
 	public function __construct(){
        	parent::__construct();
         
-        $this->load->helper('auth');        
-        $this->user = $this->session->userdata('user');
-        
+        $this->user = $this->session->userdata('user');        
         AdminAuth();
     }
     

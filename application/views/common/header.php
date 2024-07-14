@@ -5,6 +5,8 @@
 	<title><?=$this->config->item('title')?></title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <link rel="icon" href="<?=$this->config->item('baseUrl')?>/favicon.ico">
+    
     <meta property="og:title" content="">
     <meta property="og:description" content="">
     <meta property="og:image" content="/assets/image/og_image.png">
