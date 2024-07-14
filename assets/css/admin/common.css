@@ -153,12 +153,12 @@ body{
 #sideMenu .menuTabList li{
     display: block;
     padding-top: 11px;
-    padding-left: 7px;
-    font-size: 15px;
+    padding-left: 7px;    
 }
 
 #sideMenu .menuTabList li a{
-    color: #fff;    
+    color: #fff;
+    font-size: 14px;
 }
 
 /* main */

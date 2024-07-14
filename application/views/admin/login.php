@@ -33,8 +33,8 @@
                 util.showAlert(loginRes.msg);
                 return;
             }
-
-            location.replace("/admin");
+            
+            util.locationReplace("/admin");
         }
     }
     

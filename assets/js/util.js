@@ -1,4 +1,32 @@
 const util = {
+    baseUrl: '',
+    getBaseUrl: function(){
+        // 현재 URL 가져오기
+        let currentUrl = window.location.href;
+
+        // URL을 파싱하여 경로 구성 요소 추출
+        let urlParts = new URL(currentUrl);
+        let path = urlParts.pathname;
+
+        // 경로를 구성 요소로 분할
+        let pathComponents = path.split('/');
+
+        // 원하는 부분 찾기 ('~'로 시작하는 부분)
+        let desiredPart = '';
+        for (let i = 1; i < pathComponents.length; i++) {
+            if (pathComponents[i].startsWith('~')) {
+                desiredPart = '/' + pathComponents[i];
+                break;
+            }
+        }        
+        return desiredPart;
+    },
+    locationReplace: function(url) {
+        location.replace(`${this.baseUrl + url}`);
+    },
+    locationhref: function(url) {
+        location.href = this.baseUrl + url;
+    },
     showLoadingBar: function() {
         const loadingTop = window.pageYOffset;
         
@@ -14,7 +42,9 @@ const util = {
         return new Promise((resolve, reject) => {
             if (isLoading) this.showLoadingBar();
             
-            fetch(url, {
+            fullUrl = this.baseUrl + url;
+            
+            fetch(fullUrl, {
                 method: method,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
@@ -85,3 +115,7 @@ const util = {
         return str.replace(/,/g, '');
     }
 }
+
+$(function(){
+    util.baseUrl = util.getBaseUrl();
+});

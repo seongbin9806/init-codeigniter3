@@ -4,13 +4,15 @@ function AdminAuth() {
     $CI = &get_instance();
     
     $currentUrl = current_url();
-    $path = parse_url($currentUrl, PHP_URL_PATH);
+    $path = parse_url($currentUrl, PHP_URL_PATH);        
     
-    if($path != '/admin/login' && (empty($CI->user) || $CI->user['id'] != 'admin')){
-        header('Location: /admin/login');
+    $baseUrl = $CI->config->item('baseUrl');
+    
+    if($path != $baseUrl.'/admin/login' && (empty($CI->user) || $CI->user['id'] != 'admin')){
+        header("Location: {$baseUrl}/admin/login");
         exit;
-    } else if($path == '/admin/login' && isset($CI->user) && $CI->user['id'] == 'admin'){
-        header('Location: /admin');
+    } else if($path == $baseUrl.'/admin/login' && isset($CI->user) && $CI->user['id'] == 'admin'){
+        header("Location: {$baseUrl}/admin");
         exit;
     }
 }

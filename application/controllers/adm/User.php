@@ -36,6 +36,6 @@ class User extends CI_Controller {
         session_start();
         session_destroy();
         
-        header('Location: /admin/login');
+        header("Location: {$this->config->item('baseUrl')}/admin/login");
     }
 }
