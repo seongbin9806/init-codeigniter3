@@ -10,12 +10,12 @@ const util = {
         document.getElementById('mask').style.display = 'none';
         document.getElementById('loadingImg').style.display = 'none';
     },
-    postJson: function(url, data, isLoading = false) {
+    fetchJsonData: function(url, data, method = 'POST', isLoading = false) {
         return new Promise((resolve, reject) => {
             if (isLoading) this.showLoadingBar();
             
             fetch(url, {
-                method: 'POST',
+                method: method,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
                 },
@@ -33,12 +33,14 @@ const util = {
             });
         });
     },
-    showAlert: function(message, destroyEvent) {
+    showAlert: function(message, destroyEvent = '') {
         return swal.fire({
             html: message,
             confirmButtonText: '확인',
             didDestroy: () => {
-                if (destroyEvent) destroyEvent();
+                if (typeof destroyEvent === 'function') { // Check if destroyEvent is a function
+                    destroyEvent();
+                }
             }
         });
     },
@@ -49,6 +51,32 @@ const util = {
             denyButtonText: '취소',
             showDenyButton: true
         });
+    },
+    setCookie: function(name, value, days = 30) {
+        let expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    },
+    deleteCookie: function(name) {
+        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    },
+    getCookie: function(name) {
+        var nameEQ = name + "=";
+        var cookies = document.cookie.split(';');
+        for(var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            while (cookie.charAt(0) === ' ') {
+                cookie = cookie.substring(1, cookie.length);
+            }
+            if (cookie.indexOf(nameEQ) === 0) {
+                return cookie.substring(nameEQ.length, cookie.length);
+            }
+        }
+        return null;
     },
     addComma: function(number) {
         return number.toLocaleString();

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title></title>
+	<title><?=$this->config->item('title')?></title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
     <meta property="og:title" content="">
@@ -19,7 +19,7 @@
 	<script type="text/javascript" src="/assets/js/bootstrap-3.3.2.min.js"></script>	
 	<script type="text/javascript" src="/assets/js/sweetalert2.all.min.js<?=$this->config->item('ver')?>"></script>
 	<script type="text/javascript" src="/assets/js/common.js<?=$this->config->item('ver')?>"></script>
-	<script type="text/javascript" src="/assets/js/util.js<?=$this->config->item('ver')?>"></script>	
+	<script type="text/javascript" src="/assets/js/util.js<?=$this->config->item('ver')?>"></script>
 </head>
 
-<body>	
+<body>

@@ -1,0 +1,167 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+body{    
+	font-family: 'Noto Sans KR', sans-serif !important;	
+}
+
+/* 로그인 */
+#login{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login .loginBox{
+    width: 400px;
+    text-align: center;
+}
+
+#login .icoLogo{
+    margin-bottom: 25px;   
+}
+
+#login .title{
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#login .loginInput{
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    background: #F0F0F0;
+    color: #000;
+    padding-left: 20px;
+    margin-bottom: 20px;    
+    font-size: 16px;
+}
+
+#login .submitBtn{
+    background: black;
+    width: 100%;
+    height: 50px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px; 
+}
+
+/* 헤더 */
+#header{
+    position: relative;
+    background: #262626;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+#header .menuIco{
+    color: #fff;
+    margin: 0 30px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#header .headerLogo{
+    
+}
+
+#header .logoutBtn{
+    position: absolute;
+    right: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+/* content */
+#contentWrap{
+    display: flex;
+}
+
+/* side */
+#sideMenu{
+    width: 230px;
+    height: calc(100vh - 65px);
+    background: #262626;
+    position: relative;
+    padding: 20px 0;
+    overflow-y: auto;
+    transition: 0.5s;
+}
+
+#sideMenu.off{
+    width: 0px;
+    margin-left: -230px;
+            
+}
+
+#sideMenu .topBox{
+    text-align: center;
+    color: #fff;
+    font-weight: bold;    
+}
+
+#sideMenu .closeBtn{
+    position: absolute;
+    color: #fff;    
+    font-size: 18px;
+    right: 10px;
+    top: 10px;
+}
+
+#sideMenu .sideIco{
+    width: 60px;
+}
+
+#sideMenu .title{
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+#sideMenu .dropdown{    
+    padding: 0 20px 0 20px;
+}
+
+#sideMenu .dropdown .menuTab{
+    margin-top: 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#sideMenu .dropdown .menuTab i {
+    font-size: 12px;
+    transition: transform 0.3s ease; /* 회전 애니메이션 */
+}
+
+.rotated-180 {
+    transform: rotate(180deg); /* 180도 회전 */
+}
+
+#sideMenu .menuTabList{
+    margin: 0;
+}
+
+#sideMenu .menuTabList li{
+    display: block;
+    padding-top: 11px;
+    padding-left: 7px;
+    font-size: 15px;
+}
+
+#sideMenu .menuTabList li a{
+    color: #fff;    
+}
+
+/* main */
+#mainWrap{
+    width: 100%;
+}
