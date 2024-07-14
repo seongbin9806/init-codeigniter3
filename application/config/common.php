@@ -16,7 +16,6 @@ $config['title'] = "타이틀을 설정해주세요.";
 /* 파일버전 */
 $config['ver'] = "?v=".strtotime(date('Y-m-d H:i:s'));
 
-
 /* 관리자 메뉴탭 */
 $config['admMenu'] = [
     [
