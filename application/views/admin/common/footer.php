@@ -1,4 +1,8 @@
-<? if(!$this->isLoginPage){ ?>
+    <? if(!$this->isLoginPage){ ?>
+        </div>
     </div>
-</div>
-<? } ?>
+    <? } ?>
+    </body>
+
+    <? $this->load->view('/common/loadingView'); ?>    
+</html>

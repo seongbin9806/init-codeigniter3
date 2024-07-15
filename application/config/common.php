@@ -13,6 +13,9 @@ $config['baseUrl'] = "/{$desiredPart}";
 /* 타이틀 */
 $config['title'] = "타이틀을 설정해주세요.";
 
+/* 업로드 폴더 경로 */
+$config['uploadDir'] = '/assets/upload/';
+
 /* 파일버전 */
 $config['ver'] = "?v=".strtotime(date('Y-m-d H:i:s'));
 

@@ -38,9 +38,10 @@ const util = {
         document.getElementById('mask').style.display = 'none';
         document.getElementById('loadingImg').style.display = 'none';
     },
-    fetchJsonData: function(url, data, method = 'POST', isLoading = false) {
-        return new Promise((resolve, reject) => {
-            if (isLoading) this.showLoadingBar();
+    fetchJsonData: function(url, data, method = 'POST', isLoading = true) {
+        if (isLoading) this.showLoadingBar();
+        
+        return new Promise((resolve, reject) => {            
             
             fullUrl = this.baseUrl + url;
             
@@ -50,6 +51,27 @@ const util = {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
                 },
                 body: new URLSearchParams(data).toString()
+            })
+            .then(response => response.json())
+            .then(data => {
+                resolve(data);
+                if (isLoading) this.hideLoadingBar();
+            })
+            .catch(error => {
+                alert("Error: " + error.message);
+                if (isLoading) this.hideLoadingBar();
+                reject(error);
+            });
+        });
+    },
+    fetchFormData: function(url, formData, method = 'POST', isLoading = true) {
+        if (isLoading) this.showLoadingBar();
+        return new Promise((resolve, reject) => {
+            const fullUrl = this.baseUrl + url;
+
+            fetch(fullUrl, {
+                method: method,
+                body: formData // FormData 객체는 자동으로 올바른 Content-Type을 설정합니다.
             })
             .then(response => response.json())
             .then(data => {
