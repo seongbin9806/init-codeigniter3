@@ -1,0 +1,235 @@
+#notice{
+    width: 1250px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 100px 10px;
+}
+
+#notice .filter{
+    margin: 25px 0;
+    text-align: left;
+/*    padding: 0 30px;*/
+}
+
+#notice .searchType{
+    background: #F4F4F4;
+    padding: 10px;
+    border-radius: 5px;
+    outline: 0;
+}
+
+#notice .searchTxt{    
+    background: #F4F4F4;
+    padding: 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+    padding-right: 42px;
+}
+
+#notice .fa-search{
+    margin-left: -34px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#notice .title{
+    color: #000;
+    font-size: 22px;
+    letter-spacing: -1px;
+}
+
+#notice .title .point{
+    color: rgba(0, 0, 0, 0.70);
+}
+
+#notice table{
+    width: 100%;    
+    table-layout: fixed;
+    margin: 20px 0;    
+    letter-spacing: -1px;
+}
+
+#notice td, #notice th{
+    text-align: center;
+    height: 40px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#notice table .left{
+    text-align: left;    
+}
+
+#notice table th{
+    background: #e1e1e1;    
+    vertical-align: middle;
+}
+
+#notice table th.content{
+    width: 80%;
+}
+
+#notice tbody tr{
+    border-bottom: 1px solid #eee;
+    height: 40px;
+    cursor: pointer;
+}
+
+#notice tbody tr:nth-child(odd){
+    background: #fbfbfb;
+}
+
+#notice tbody tr:hover{
+    background: #eee;
+}
+
+#notice table td{
+    font-weight: 500;
+    overflow:hidden;    
+    white-space : nowrap; 
+    text-overflow: ellipsis;
+}
+
+#notice .btnBox{
+    width: 100%;
+    height: 35px;    
+}
+
+#notice .btnMove{
+    float: right;
+    background: #DA2827;
+    color: #fff;
+    border-radius: 5px;
+    width: 120px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#noticeSend, #noticeView{
+    width: 850px;
+    margin: 0 auto;
+}
+
+#noticeSend .inputBox, #noticeView .inputBox{
+    margin: 50px 0;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background: #fbfbfb;
+    padding: 20px;
+    min-height: 40vh;
+}
+
+#noticeView .inputBox img{
+    max-width: 100% !important;
+}
+
+#noticeSend .guide, #noticeView .guide{
+    margin: 8px 0;    
+}
+
+#noticeView .viewText{
+    font-size: 16px;
+    color: #717171;
+    padding-left: 5px;
+    letter-spacing: -1px;
+}
+
+#noticeSend .cardName, #noticeView .cardName{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;   
+}
+
+#noticeSend input[type="text"], #noticeSend input[type="password"]{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #eee;
+    background-color: #f6f6f6 !important;
+    color: #252525;
+    padding-left: 10px;
+    font-weight: 500 !important;
+    text-indent: 10px;
+}
+
+#noticeSend .btnSubmit{
+    background: linear-gradient(90deg, #515151, #313131);
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#noticeView .tobBox{
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;    
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#noticeView .tobBox .title{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+#noticeView .sub{
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 14px;
+    letter-spacing: -1px;
+}
+
+#noticeView .bold{
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+.answerF{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* -- */
+#contact{
+    background-position: 50% 85%;
+}
+
+@media screen and (max-width: 1250px){
+    #notice{
+        width: 100%;
+        padding: 40px 10px;
+    }
+}
+    
+@media screen and (max-width: 850px){
+    #notice .title {
+        font-size: 15px;
+    }   
+    
+    #notice .filter {
+        text-align: center;
+    }
+    
+    #notice table th.content {
+        width: 40%;
+    }                
+    
+    #noticeSend, #noticeView{
+        width: 100%;
+        padding: 0 10px;
+    }
+    
+    
+    /* -- */
+    #contact{
+        background-position: 87% 70%;
+    }
+}

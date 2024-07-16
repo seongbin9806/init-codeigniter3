@@ -71,8 +71,9 @@ a {
 
 /* 스크롤바를 숨깁니다. */
 ::-webkit-scrollbar {
-  	width: 5px; /* 스크롤바 너비 조정 */
-	height: 5px;
+  	width: 8px; 
+/*    스크롤바 너비 조정 */
+	height: 8px;
 }
 
 /* 스크롤바의 트랙 (배경)을 스타일링합니다. */
@@ -140,7 +141,7 @@ a {
 }
 
 .swal2-styled.swal2-confirm {
-	background: black !important;
+	background: #DA2827 !important;
 	color: #fff !important;
 	border-radius: 4px !important;
 }
@@ -189,4 +190,29 @@ a {
     top: 0;
     left: 0;
     background: #898989;
+}
+
+/* page */
+
+#page{
+    margin-top: 30px;
+    text-align: center;
+}
+
+#page .link{
+    background: #F4F4F4;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    font-weight: 500;
+    margin: 0 2px;
+}
+
+#page .link.active{
+    background: #DA2827;
+    color: #fff;
+    font-weight: bold;
 }

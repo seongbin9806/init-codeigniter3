@@ -21,10 +21,33 @@ const util = {
         }        
         return desiredPart;
     },
+    postLocation(url, param, target = '') {
+        let f = document.createElement('form');
+        let objs, value;
+        
+        fullUrl = this.baseUrl + url;
+        
+        for (let key in param) {
+            value = param[key];
+            objs = document.createElement('input');
+            objs.setAttribute('type', 'hidden');
+            objs.setAttribute('name', key);
+            objs.setAttribute('value', value);
+            f.appendChild(objs)
+        }    
+        if (target) {
+            f.setAttribute('target', target)
+        }
+
+        f.setAttribute('method', 'post');
+        f.setAttribute('action', fullUrl);
+        document.body.appendChild(f);
+        f.submit();
+    },
     locationReplace: function(url) {
         location.replace(`${this.baseUrl + url}`);
     },
-    locationhref: function(url) {
+    locationHref: function(url) {
         location.href = this.baseUrl + url;
     },
     showLoadingBar: function() {

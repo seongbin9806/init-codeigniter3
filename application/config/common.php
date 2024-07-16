@@ -19,6 +19,11 @@ $config['uploadDir'] = '/assets/upload/';
 /* 파일버전 */
 $config['ver'] = "?v=".strtotime(date('Y-m-d H:i:s'));
 
+/* 게시판 */
+$config['noticeType'] = [
+    'contact' => ['type' => 'contact', 'title' => '문의하기'],
+];
+
 /* 관리자 메뉴탭 */
 $config['admMenu'] = [
     [

@@ -5,6 +5,7 @@ class Admin extends CI_Controller {
 
     public $user;
     public $isLoginPage = false;
+    public $title = "";
     
 	public function __construct(){
        	parent::__construct();

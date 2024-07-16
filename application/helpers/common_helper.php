@@ -50,3 +50,72 @@ function cmmFileUpload($files, $width = 0) {
     
     return $fileArr; // 업로드된 파일 정보 배열 반환
 }
+
+function getTableNumber($page, $pagingCount, $count){
+    return number_format(($page - 1) * $pagingCount + $count + 1);
+}
+
+function getPageLimit($page, $pagingCount){
+    return ((int)$page - 1) * $pagingCount;
+}
+
+function getMaxPage($totalCount, $pagingCount){        
+    $maxPage = ceil($totalCount / $pagingCount);
+    if($maxPage == 0) $maxPage = 1;
+    
+    return $maxPage;
+}
+
+function getPrevPage($page){
+    if($page == 1) return $page;
+    
+    return ($page - 1);
+}
+
+function getNextPage($page, $maxPage){
+    if($page == $maxPage) return $page;
+    
+    return ($page + 1);
+}
+
+function getCenterPage($page, $maxPage){
+    
+    $maxCenterCnt = 5; // 버튼 페이징 갯수        
+    $betweenCnt = floor($maxCenterCnt / 2);
+    $initPage = ($page - $betweenCnt);
+    $conditionPage = ($page + $betweenCnt);
+    
+    if($initPage <= 0) $conditionPage = $maxCenterCnt;
+    if($conditionPage > $maxPage) $initPage -= ($conditionPage - $maxPage);
+    
+    $pageArr = array();
+            
+    for($p = $initPage; $p <= $conditionPage; $p++){ 
+        if($p <= 0 || $p > $maxPage) continue;            
+        $pageArr[] = (int)$p;
+    }
+    
+    return $pageArr;
+}
+    
+function getQueryString($queryString){
+    $queryArr = explode('&', $queryString);
+
+    $resultQuery = array();
+    for($i=0; $i<count($queryArr); $i++){            
+        if(explode('=', $queryArr[$i])[0] == 'page') continue;
+        
+        $resultQuery[] = $queryArr[$i];
+    }
+
+    $resultString = implode('&', $resultQuery);
+    if($resultString){
+        return '&'.$resultString;
+    }
+    
+    return '';
+}
+
+function combinePage($page, $queryString){
+    return '?page='.$page.$queryString;
+}
