@@ -8,7 +8,10 @@ $pathComponents = explode('/', $path);
 $firstPathComponent = isset($pathComponents[0]) ? $pathComponents[0] : '';
 $desiredPart = (strpos($firstPathComponent, '~') === 0) ? $firstPathComponent : '';
 
-$config['baseUrl'] = "/{$desiredPart}";
+$config['baseUrl'] = "";
+if(!empty($desiredPart)){
+    $config['baseUrl'] = "/{$desiredPart}";   
+}
 
 /* 타이틀 */
 $config['title'] = "타이틀을 설정해주세요.";
