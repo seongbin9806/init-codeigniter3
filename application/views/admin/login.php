@@ -1,6 +1,6 @@
 <div id="login">
     <div class="loginBox">
-        <img class="icoLogo" src="/assets/image/logo.png?v=<?=$this->config->item('ver')?>"/>
+        <img class="icoLogo" src="<?=$this->config->item('baseUrl')?>/assets/image/logo.png?v=<?=$this->config->item('ver')?>"/>
         <p class="title"><?=$this->config->item('title')?> - 관리자 로그인</p>
         
         <input type="text" id="id" class="loginInput" placeholder="아이디"/>

@@ -2,7 +2,15 @@
 <html>
 
 <head>
-	<title><?=$this->config->item('title')?></title>
+	<?
+        $title = $this->title;    
+        if(!empty($this->title)){
+            $title .= " - ";
+        }    
+        $title .= $this->config->item('title');
+    ?>
+	<title><?=$title?></title>
+    
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
     <link rel="icon" href="<?=$this->config->item('baseUrl')?>/favicon.ico">
